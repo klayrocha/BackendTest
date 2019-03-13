@@ -33,7 +33,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		final HttpServer server = startServer();
-		System.out.println(String.format("Running ....%sapplication.wadl\npress enter to stop...", BASE_URI));
+		System.out.println(String.format("Running ....%s\npress enter to stop...", BASE_URI));
 		System.in.read();
 		server.shutdown();
 	}
