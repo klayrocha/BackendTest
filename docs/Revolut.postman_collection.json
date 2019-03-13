@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "485f78aa-3231-4aa2-b313-832314ca6001",
+		"name": "Revolut",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "retrieveAccount",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8085/revolut/account/PT233920012223230888",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"revolut",
+						"account",
+						"PT233920012223230888"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insertAccount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"number\": 3920012223230777,\n    \"ownerAccount\": \"João Pedro Rocha\",\n    \"iban\": \"PT233920012223230777\",\n    \"bic\": \"BIMOMZMX\",\n    \"balance\": 500,\n    \"currencyType\": \"Euro\",\n    \"transactions\": []\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8085/revolut/account/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"revolut",
+						"account",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tranfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ibanDebit\": \"PT233920012223230888\",\n    \"ibanCredit\": \"PT111999992223230790\",\n    \"value\": \"1.98\",\n    \"description\": \"Test\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8085/revolut/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"revolut",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
